@@ -1,0 +1,46 @@
+digraph finite_state_machine {
+rankdir=LR;
+	size="10,13"
+	start [shape = point];start;
+        
+	node [shape = circle]; q1 q2 q3 q5 q6 q7 q9 q10 q11
+        node [shape = doublecircle];
+        subgraph cluster {
+		 q0 q1;
+                style=invis;
+	}
+		
+	subgraph cluster_0 {
+		q2  q3 q4;
+                style=invis;
+	}
+
+	subgraph cluster_1 {
+		q5 q6 q7 q8
+                style=invis;
+	}
+        
+        subgraph cluster_2 {
+		q9 q10 q11 q12
+                style=invis;
+	}
+	start -> q0;	
+        q4 -> q1 [ label = "&epsilon;" ];
+	q0 -> q1 [ label = "&epsilon;" ];
+	q1 -> q2 [ label = "&epsilon;" ];
+	q2 -> q3 [ label = "0" ];
+	q3 -> q4 [ label = "1" ];
+	q1 -> q5 [ label = "&epsilon;" ];
+	q5 -> q6 [ label = "0" ];
+	q6 -> q7 [ label = "0" ];
+	q7 -> q8 [ label = "1" ];
+	q8 -> q1 [ label = "&epsilon;" ];
+	q1 -> q9 [ label = "&epsilon;" ];
+        q9 -> q10 [ label = "0" ];
+	q10 -> q11 [ label = "1" ];
+	q11 -> q12 [ label = "0" ];
+	q12 -> q1 [ label = "&epsilon;" ];
+	
+
+
+}

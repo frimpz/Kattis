@@ -1,0 +1,34 @@
+
+
+
+d = int(input())
+inp = input().split()
+l = []
+for i in inp:
+    l.append(float(i))
+inp = input().split()
+g = []
+for i in inp:
+    g.append(float(i))
+step_size = 0.1
+
+for i in range(3):
+    w = []
+    for j,k in l,g:
+        w.append(random.uniform(j,k))
+
+    for j in w:
+        print(j, end=" ")
+    print(j, end=" ")
+    sys.stdout.flush()
+
+    error = int(input())
+    inp = input().split()
+    dv = []
+    for j in inp:
+        dv.append(j)
+
+    for j in w:
+        print(j, end=" ")
+    sys.stdout.flush()
+
